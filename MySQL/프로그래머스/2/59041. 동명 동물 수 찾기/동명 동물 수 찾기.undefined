@@ -1,0 +1,10 @@
+-- 이름 과 해당 이름이 쓰인 횟수
+SELECT name, count(name)
+from animal_ins
+-- 이름이 없는 동물은 제외
+where name is not null
+-- 동물 이름 중 두번이상 쓰인 이름
+group by name
+having count(name) >= 2
+-- 이름 순으로 조회
+order by name;
